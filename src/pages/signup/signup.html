@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Sign Up</ion-title>
+        
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()"><ion-icon name="close"></ion-icon></button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    
+    <form (ngSubmit)="signUp(userInfo)">
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input [(ngModel)]="userInfo.name" name="name" type="text" value=""></ion-input>
+        </ion-item>
+        
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input [(ngModel)]="userInfo.email" name="email" type="email" value=""></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input [(ngModel)]="userInfo.password" name="password" type="password"></ion-input>
+        </ion-item>
+
+        <div padding>
+            <button ion-button block type="submit">Sign Up</button>
+        </div>
+    </form>
+    
+    <button ion-button block clear (click)="gotoLogin()">Login</button>
+    
+</ion-content>
